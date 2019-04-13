@@ -17,6 +17,7 @@ import { PageLoadingComponent } from './pages/page-loading/page-loading.componen
 import { NgxsModule } from '@ngxs/store';
 import { AppState } from 'src/app/state/AppState';
 import { environment } from 'src/environments/environment';
+import { PageRecordComponent } from './pages/page-record/page-record.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { environment } from 'src/environments/environment';
     PageChooseAudienceComponent,
     PageLiveComponent,
     PageEvaluationComponent,
-    PageLoadingComponent
+    PageLoadingComponent,
+    PageRecordComponent
   ],
   imports: [
     BrowserModule,
