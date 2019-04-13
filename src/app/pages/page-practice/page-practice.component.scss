@@ -1,7 +1,9 @@
 #layout {
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1111px;
 }
 
 .choose-card {
@@ -43,5 +45,6 @@
 
 .UploadCard {
   width: 300px;
-  height: 300px;
+  height: 200px;
+  text-align: center;
 }
