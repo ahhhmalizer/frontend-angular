@@ -45,7 +45,14 @@ export class PageEvaluationComponent implements OnInit {
   showYAxisLabel = false;
 
   colorScheme = {
-    domain: ['#ff1744', '#d500f9', '#2979ff', '#00e5ff', '#c6ff00', '#ff3d00']
+    domain: [
+      '#1769aa',
+      '#2196f3',
+      '#4dabf5',
+      '#1c54b2',
+      '#2979ff',
+      '#5393ff'
+    ]
   };
 
   // line, area

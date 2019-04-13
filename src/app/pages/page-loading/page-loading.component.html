@@ -1,9 +1,9 @@
 <div id="layout">
   <div>
     <!-- <mat-icon *ngIf="uploaded">check</mat-icon> -->
-    <h5 *ngIf="uploaded">Analyzing your video...</h5>
-    <h5 *ngIf="!uploaded">Uploading your video...</h5>
-    <div style="margin-left: 23px;">
+    <h3 *ngIf="uploaded">Analyzing your video...</h3>
+    <h3 *ngIf="!uploaded">Uploading your video...</h3>
+    <div style="margin-left: 33px;">
         <mat-progress-spinner *ngIf="uploaded" mode="indeterminate"></mat-progress-spinner>
         <mat-progress-spinner *ngIf="!uploaded" mode="determinate" [value]="loading"></mat-progress-spinner>
     </div>
