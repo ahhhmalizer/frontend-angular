@@ -6,6 +6,7 @@ import { PagePracticeComponent } from 'src/app/pages/page-practice/page-practice
 import { PageLiveComponent } from 'src/app/pages/page-live/page-live.component';
 import { PageEvaluationComponent } from 'src/app/pages/page-evaluation/page-evaluation.component';
 import { PageLoadingComponent } from 'src/app/pages/page-loading/page-loading.component';
+import { PageRecordComponent } from 'src/app/pages/page-record/page-record.component';
 
 const routes: Routes = [
   { path: 'choose-audience', component: PageChooseAudienceComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'live', component: PageLiveComponent },
   { path: 'loading', component: PageLoadingComponent },
   { path: 'evaluation', component: PageEvaluationComponent },
+  { path: 'record', component: PageRecordComponent },
   { path: '**', component: PageLandingComponent }
 ];
 
