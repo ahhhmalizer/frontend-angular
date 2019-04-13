@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 import { BlobService } from 'angular-azure-blob-service';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { SetProgress } from 'src/app/state/AppState';
+import { SetProgress, LoadEvaluation } from 'src/app/state/AppState';
 
 @Component({
   selector: 'app-page-practice',
@@ -12,8 +12,6 @@ import { SetProgress } from 'src/app/state/AppState';
 })
 export class PagePracticeComponent implements OnInit {
   @HostBinding('class') classes = 'component';
-
-  title = 'Ahhhmalizer';
 
   constructor(private blob: BlobService, private router: Router, private store: Store) {}
   upload(file: File) {
@@ -24,7 +22,9 @@ export class PagePracticeComponent implements OnInit {
         sasToken: environment.config.sas,
         blockSize: 1024 * 64,
         file,
-        complete: () => {},
+        complete: () => {
+          this.store.dispatch(new LoadEvaluation());
+        },
         error: err => {
           console.log('Error:', err);
         },

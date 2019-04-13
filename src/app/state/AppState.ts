@@ -1,8 +1,9 @@
 import { Action, Selector, State, StateContext, Store } from '@ngxs/store';
+import { BackendService, Evaluation } from 'src/app/services/backend.service';
 
-export class SetEvaluation {
+export class LoadEvaluation {
   static readonly type = '[App State] SetEvaluation';
-  constructor(public evaluation: any) {}
+  constructor() {}
 }
 
 export class SetProgress {
@@ -13,23 +14,49 @@ export class SetProgress {
 @State<AppStateModel>({
   name: 'app',
   defaults: {
-    evaluation: '',
+    evaluation: {
+      results: {
+        sentiments: []
+      }
+    },
     progress: -1
   }
 })
 export class AppState {
-  constructor() {}
+  constructor(private backendService: BackendService) {}
 
   @Selector()
   static evaluation(state: AppStateModel): any {
     return state.evaluation;
   }
 
-  @Action(SetEvaluation)
-  public setEvaluation(ctx: StateContext<AppStateModel>, action: SetEvaluation) {
-    ctx.patchState({
-      evaluation: action.evaluation
-    });
+  @Action(LoadEvaluation)
+  public setEvaluation(ctx: StateContext<AppStateModel>, action: LoadEvaluation) {
+    return this.backendService.getAnalayze().subscribe(
+      data => {
+        ctx.patchState({
+          evaluation: data
+        });
+      },
+      error => {
+        ctx.patchState({
+          evaluation: {
+            results: {
+              sentiments: [
+                {
+                  name: 'Neutral',
+                  value: 0.6295
+                },
+                {
+                  name: 'Positive',
+                  value: 0.3695
+                }
+              ]
+            }
+          }
+        });
+      }
+    );
   }
 
   @Action(SetProgress)
@@ -41,6 +68,6 @@ export class AppState {
 }
 
 export interface AppStateModel {
-  evaluation: any;
+  evaluation: Evaluation;
   progress: number;
 }
