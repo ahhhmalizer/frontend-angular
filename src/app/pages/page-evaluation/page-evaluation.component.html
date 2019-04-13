@@ -1,9 +1,10 @@
 <h1 id="heading">
   <div>
     <span>Score </span>
-    <span class="mat-headline">45/100</span>
+    <span class="mat-headline">{{score}}/100</span>
   </div>
   <div>
+    <span class="mat-subheading-2"><b>Ähhms?!</b> {{umCount}} </span>
     <span class="mat-subheading-2"><b>Words:</b> {{totalWords}} </span>
     <span class="mat-subheading-2"><b>Duration:</b> {{totalTime}}</span>
   </div>
@@ -27,9 +28,9 @@
 </ngx-charts-bar-horizontal-normalized>
 
 <h2>
-  Emotion
+  Confidence
 </h2>
-<ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="emotionArray" [gradient]="gradient"
+<ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="confidenceArray" [gradient]="gradient"
   [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
   [showYAxisLabel]="showYAxisLabel" [autoScale]="autoScale" (select)="onSelect($event)" [showGridLines]="false">
 </ngx-charts-area-chart>
@@ -39,11 +40,3 @@
 </h2>
 <ngx-charts-tree-map [view]="view" [scheme]="colorScheme" [results]="wordMapArray" (select)="onSelect($event)">
 </ngx-charts-tree-map>
-
-<h2>
-  Ähhm Counter
-</h2>
-
-<h2>
-  Silence Time
-</h2>

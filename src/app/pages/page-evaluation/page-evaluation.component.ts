@@ -21,17 +21,29 @@ export class PageEvaluationComponent implements OnInit {
       this.wordMapArray = data.evaluation.wordCount;
       this.totalTime = data.evaluation.time;
       this.totalWords = data.evaluation.words;
+      this.score = data.evaluation.grade;
+      this.confidenceArray = [
+        {
+          name: 'confidence',
+          series: data.evaluation.articulation.map(a => {
+            return { name: a.start, value: a.confidence };
+          })
+        }
+      ];
+      this.umCount = data.evaluation.umCount;
     });
   }
 
   @HostBinding('class')
   class = 'CenteredPage';
 
+  umCount = 0;
+  score = 0;
   totalWords = 0;
   totalTime = '';
   videoUrl = '';
   sentimentArray: any[] = multi;
-  emotionArray: any[] = multi;
+  confidenceArray: any[] = multi;
   wordMapArray: any[] = wordMap;
 
   view: any[] = [1000, 200];
