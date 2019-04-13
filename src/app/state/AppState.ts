@@ -15,9 +15,7 @@ export class SetProgress {
   name: 'app',
   defaults: {
     evaluation: {
-      results: {
-        sentiments: []
-      }
+      sentiments: []
     },
     progress: -1
   }
@@ -41,18 +39,16 @@ export class AppState {
       error => {
         ctx.patchState({
           evaluation: {
-            results: {
-              sentiments: [
-                {
-                  name: 'Neutral',
-                  value: 0.6295
-                },
-                {
-                  name: 'Positive',
-                  value: 0.3695
-                }
-              ]
-            }
+            sentiments: [
+              {
+                name: 'Neutral',
+                value: 0.6295
+              },
+              {
+                name: 'Positive',
+                value: 0.3695
+              }
+            ]
           }
         });
       }

@@ -14,7 +14,7 @@ export class BackendService {
 }
 
 export interface Evaluation {
-  results: { sentiments: NameValue[] };
+  sentiments: NameValue[];
 }
 
 export interface NameValue {
