@@ -20,7 +20,8 @@ export class SetProgress {
       words: 0,
       wordCount: []
     },
-    progress: -1
+    progress: -1,
+    uploaded: false
   }
 })
 export class AppState {
@@ -32,7 +33,10 @@ export class AppState {
   }
 
   @Action(LoadEvaluation)
-  public setEvaluation(ctx: StateContext<AppStateModel>, action: LoadEvaluation) {
+  public loadEvaluation(ctx: StateContext<AppStateModel>, action: LoadEvaluation) {
+    ctx.patchState({
+      uploaded: true
+    });
     return this.backendService.getAnalayze().subscribe(
       data => {
         ctx.patchState({
@@ -149,4 +153,5 @@ export class AppState {
 export interface AppStateModel {
   evaluation: Evaluation;
   progress: number;
+  uploaded: boolean;
 }

@@ -9,12 +9,14 @@ import { AppState } from 'src/app/state/AppState';
 })
 export class PageLoadingComponent implements OnInit {
   public loading: number;
+  public uploaded = false;
 
   constructor(private store: Store) {}
 
   ngOnInit() {
     this.store.select(AppState).subscribe(data => {
       this.loading = data.progress;
+      this.uploaded = data.uploaded;
     });
   }
 }
