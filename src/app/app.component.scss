@@ -15,6 +15,15 @@ $footerHeight: 60px;
   }
 }
 
+#LoggedInAs {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+#UserName {
+  font-weight: bold;
+}
+
 .AppFooter {
   width: 100%;
   height: $footerHeight;
