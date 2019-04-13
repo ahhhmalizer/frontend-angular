@@ -1,8 +1,8 @@
-<mat-toolbar id="toolbar" color="primary" class="mat-elevation-z8">
-    <button mat-button routerLink="/">Ähhhmalizer</button>
+<mat-toolbar id="toolbar" color="primary" class="mat-elevation-z4">
+    <h3 routerLink="/">Ähhhmalizer</h3>
     <div>
-        <span class="mat-h4">User Name</span>
-        <button mat-icon-button>
+        <span class="mat-h4"><span id="LoggedInAs">Logged in as </span><span id="UserName"> Peter Lustig</span></span>
+        <button mat-icon-button routerLink="/evaluation">
             <mat-icon>account_circle</mat-icon>
         </button>
     </div>
@@ -10,5 +10,11 @@
 
 
 <div id="site-container">
-    <router-outlet></router-outlet>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 </div>
+
+<footer class="AppFooter">
+    <p>Built with ❤️ by the Ähhhmalizer team.</p>
+</footer>

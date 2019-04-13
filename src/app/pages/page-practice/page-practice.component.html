@@ -1,27 +1,29 @@
 <div id="layout">
-    <mat-card class="choose-card">
-        <mat-card-header>
-            <mat-card-title>Video hochladen</mat-card-title>
-            <!-- <mat-card-subtitle>Live</mat-card-subtitle> -->
-        </mat-card-header>
-        <mat-card-content>
+    <div class="UploadCard">
+        <h3>Upload your presentation</h3>
+        <div class="file-area">
+            <input type="file" (change)="upload($event.target.files[0])">
+            <div class="file-dummy">
+                <span>Click to select a file, or drag it here</span>
+            </div>
+            </mat-card-content>
+            </mat-card>
+            <mat-card class="choose-card" [routerLink]="['/record']">
+                <mat-card-header>
+                    <mat-card-title>Video aufnehmen</mat-card-title>
+                    <!-- <mat-card-subtitle>Practice</mat-card-subtitle> -->
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-icon class="big-icon">videocam</mat-icon>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="UploadCard">
+            <h3>Upload your presentation</h3>
             <div class="file-area">
                 <input type="file" (change)="upload($event.target.files[0])">
-                <div class="file-dummy">
-                    <span>Click to select a file, or drag it here</span>
-                </div>
+                <mat-icon class="big-icon">videocam</mat-icon>
             </div>
-        </mat-card-content>
-    </mat-card>
-    <mat-card class="choose-card" [routerLink]="['/record']">
-        <mat-card-header>
-            <mat-card-title>Video aufnehmen</mat-card-title>
-            <!-- <mat-card-subtitle>Practice</mat-card-subtitle> -->
-        </mat-card-header>
-        <mat-card-content>
-            <mat-icon class="big-icon">videocam</mat-icon>
-        </mat-card-content>
-    </mat-card>
-</div>
-
-<button mat-button routerLink="/evaluation">Zur Auswertung</button>
+        </div>
+    </div>

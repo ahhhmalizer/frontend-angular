@@ -1,3 +1,5 @@
+$footerHeight: 60px;
+
 #toolbar {
   display: flex;
   justify-content: space-between;
@@ -5,5 +7,33 @@
 
 #site-container {
   display: flex;
-  margin: 0 4vw;
+  flex-direction: row;
+  justify-content: center;
+  div {
+    min-height: calc(100vh - 60px - 64px);
+    max-width: 1111px;
+  }
+}
+
+#LoggedInAs {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+#UserName {
+  font-weight: bold;
+}
+
+.AppFooter {
+  width: 100%;
+  height: $footerHeight;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  size: 28px;
+  background-color: rgb(248, 248, 248);
+  p {
+    opacity: 0.7;
+  }
 }

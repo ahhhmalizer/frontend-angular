@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { wordMap, multi } from './test-data';
 
 @Component({
@@ -7,6 +7,10 @@ import { wordMap, multi } from './test-data';
   styleUrls: ['./page-evaluation.component.scss']
 })
 export class PageEvaluationComponent implements OnInit {
+
+  @HostBinding('class')
+  class = 'CenteredPage';
+
   constructor() {}
 
   sentimentArray: any[] = multi;

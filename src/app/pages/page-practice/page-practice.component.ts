@@ -11,7 +11,7 @@ import { SetProgress, LoadEvaluation } from 'src/app/state/AppState';
   styleUrls: ['./page-practice.component.scss']
 })
 export class PagePracticeComponent implements OnInit {
-  @HostBinding('class') classes = 'component';
+  @HostBinding('class') classes = 'component CenteredPage';
 
   constructor(private blob: BlobService, private router: Router, private store: Store) {}
   upload(file: File) {
