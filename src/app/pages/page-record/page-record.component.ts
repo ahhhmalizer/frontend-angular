@@ -31,7 +31,7 @@ export class PageRecordComponent implements OnInit {
 }
 
 function onSuccess(stream) {
-  (document.getElementById('video') as any).src = (window.URL ? URL : webkitURL).createObjectURL(stream);
+  (document.getElementById('video') as any).srcObject = stream;
 
   // property of video tag.
   (document.getElementById('video') as any).play();
