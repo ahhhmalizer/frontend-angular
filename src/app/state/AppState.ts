@@ -32,21 +32,20 @@ export class AppState {
   @Action(LoadEvaluation)
   public loadEvaluation(ctx: StateContext<AppStateModel>, action: LoadEvaluation) {
     ctx.patchState({
-      uploaded: true
+      uploaded: true,
+      videoUrl: action.videoUrl
     });
     return this.backendService.getAnalayze(action.videoUrl).subscribe(
       data => {
         ctx.patchState({
           evaluation: data,
-          analyzed: true,
-          videoUrl: action.videoUrl
+          analyzed: true
         });
       },
       error => {
         ctx.patchState({
           analyzed: true,
-          evaluation: getDefaultEvaluation(),
-          videoUrl: action.videoUrl
+          evaluation: getDefaultEvaluation()
         });
       }
     );
