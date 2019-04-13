@@ -4,10 +4,31 @@
 <h2>
   Sentiment Analysis
 </h2>
-<ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
-  [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+<ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="sentimentArray" [gradient]="gradient"
+  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoScale"
+  (select)="onSelect($event)" [showGridLines]="false">
 </ngx-charts-area-chart>
-<p>
 
-</p>
+<h2>
+  Emotion
+</h2>
+<ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="emotionArray" [gradient]="gradient"
+  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoScale"
+  (select)="onSelect($event)" [showGridLines]="false">
+</ngx-charts-area-chart>
+
+<h2>
+  Word Count
+</h2>
+<ngx-charts-tree-map [view]="view" [scheme]="colorScheme" [results]="wordMapArray" (select)="onSelect($event)">
+</ngx-charts-tree-map>
+
+<h2>
+  Ähhm Counter
+</h2>
+
+<h2>
+  Silence Time
+</h2>

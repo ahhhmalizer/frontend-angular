@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BlobService } from 'angular-azure-blob-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-practice',
@@ -13,7 +14,7 @@ export class PagePracticeComponent implements OnInit {
   title = 'Ahhhmalizer';
   progress = 0;
 
-  constructor(private blob: BlobService) {}
+  constructor(private blob: BlobService, private router: Router) {}
   upload(file: File) {
     if (file !== null) {
       const baseUrl = this.blob.generateBlobUrl(environment.config, file.name);
@@ -23,7 +24,7 @@ export class PagePracticeComponent implements OnInit {
         blockSize: 1024 * 64, // OPTIONAL, default value is 1024 * 32
         file,
         complete: () => {
-          console.log('Transfer completed !');
+          this.router.navigateByUrl('/evaluation');
         },
         error: err => {
           console.log('Error:', err);

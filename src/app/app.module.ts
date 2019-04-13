@@ -12,6 +12,7 @@ import { PageChooseAudienceComponent } from './pages/page-choose-audience/page-c
 import { PageLiveComponent } from './pages/page-live/page-live.component';
 import { PageEvaluationComponent } from './pages/page-evaluation/page-evaluation.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { FileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MaterialModule,
     BlobModule.forRoot(),
     BrowserAnimationsModule,
+    FileDropModule,
     NgxChartsModule
   ],
   providers: [],

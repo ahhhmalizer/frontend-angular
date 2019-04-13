@@ -1,4 +1,4 @@
-import { Environment } from 'src/environments/environment';
+import { Environment } from 'src/environments/Environment.interface';
 
 export const environment: Environment = {
   production: true,

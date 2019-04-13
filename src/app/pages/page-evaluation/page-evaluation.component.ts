@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { wordMap, multi } from './test-data';
 
 @Component({
   selector: 'app-page-evaluation',
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class PageEvaluationComponent implements OnInit {
   constructor() {}
 
-  single: any[];
-  multi: any[];
+  sentimentArray: any[] = multi;
+  emotionArray: any[] = multi;
+  wordMapArray: any[] = wordMap;
 
-  view: any[] = [1500, 200];
+  view: any[] = [1800, 200];
 
   // options
   showXAxis = true;
@@ -19,13 +21,19 @@ export class PageEvaluationComponent implements OnInit {
   gradient = false;
   showLegend = false;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Timeline';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Sentiment';
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#ff1744', '#d500f9', '#2979ff', '#00e5ff', '#c6ff00', '#ff3d00']
   };
 
+  // line, area
+  autoScale = true;
+
+  onSelect(event) {
+    console.log(event);
+  }
   ngOnInit() {}
 }

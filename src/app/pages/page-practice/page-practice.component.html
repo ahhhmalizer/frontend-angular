@@ -1,11 +1,16 @@
 <div id="layout">
     <mat-card class="choose-card">
         <mat-card-header>
-            <mat-card-title>Live</mat-card-title>
-            <mat-card-subtitle>Live</mat-card-subtitle>
+            <mat-card-title>Video hochladen</mat-card-title>
+            <!-- <mat-card-subtitle>Live</mat-card-subtitle> -->
         </mat-card-header>
         <mat-card-content>
-            <input type="file" (change)="upload($event.target.files[0])">
+            <div class="file-area">
+                <input type="file" (change)="upload($event.target.files[0])">
+                <div class="file-dummy">
+                    <span>Click to select a file, or drag it here</span>
+                </div>
+            </div>
             <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
 
         </mat-card-content>
