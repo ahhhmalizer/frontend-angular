@@ -1,9 +1,10 @@
 <div id="layout">
+
     <mat-card class="mat-elevation-z4">
         <div class="UploadCard">
             <h3>Upload your presentation</h3>
             <div class="file-area">
-                <input type="file" (change)="upload($event.target.files[0])">
+                <input type="file" accept="video/*" (change)="upload($event.target.files[0])">
                 <div class="file-dummy">
                     <span>Click to select a file, or drag it here</span>
                 </div>
@@ -11,13 +12,10 @@
         </div>
     </mat-card>
 
-    <mat-card class="mat-elevation-z4">
+    <mat-card class="mat-elevation-z4" routerLink="/record">
         <div class="UploadCard">
-            <h3>Upload your presentation</h3>
-            <div class="file-area">
-                <input type="file" (change)="upload($event.target.files[0])">
-                <mat-icon class="big-icon" style="margin-left:-64px">videocam</mat-icon>
-            </div>
+            <h3>Record your presentation</h3>
+            <mat-icon class="big-icon" style="margin-left:-64px">videocam</mat-icon>
         </div>
     </mat-card>
 
