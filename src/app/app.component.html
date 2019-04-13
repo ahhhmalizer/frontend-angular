@@ -1,4 +1,14 @@
-<input type="file" (change)="upload($event.target.files[0])">
-<mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
-{{progress}}
-<router-outlet></router-outlet>
+<mat-toolbar id="toolbar" color="primary">
+    <button mat-button routerLink="/">Ähhhmalizer</button>
+    <div>
+        <span>User Name</span>
+        <button mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+
+<div id="site-container">
+    <router-outlet></router-outlet>
+</div>

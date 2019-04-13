@@ -1,10 +1,22 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { UploadParams } from 'angular-azure-blob-service';
 
-export const environment = {
-  production: false
+export const environment: Environment = {
+  production: false,
+  config: {
+    sas:
+      '?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&st=2019-04-12T01%3A03%3A00Z&se=2019-04-15T01%3A03%3A00Z&sig=%2B%2Bwg8RJ0FYz4HP4OICOBVbJcz4kzG8MdD8BNqSsqEMk%3D',
+    storageAccount: 'ahhhmalizerstorage',
+    containerName: 'test'
+  }
 };
+
+export interface Environment {
+  production: boolean;
+  config: UploadParams;
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

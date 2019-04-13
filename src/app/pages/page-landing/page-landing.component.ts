@@ -1,0 +1,14 @@
+import { Component, OnInit, HostBinding } from '@angular/core';
+
+@Component({
+  selector: 'app-page-landing',
+  templateUrl: './page-landing.component.html',
+  styleUrls: ['./page-landing.component.scss']
+})
+export class PageLandingComponent implements OnInit {
+  @HostBinding('class') classes = 'component';
+
+  constructor() {}
+
+  ngOnInit() {}
+}
