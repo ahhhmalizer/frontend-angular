@@ -11,7 +11,7 @@ import { SetProgress } from 'src/app/state/AppState';
   styleUrls: ['./page-practice.component.scss']
 })
 export class PagePracticeComponent implements OnInit {
-  @HostBinding('class') classes = 'component';
+  @HostBinding('class') classes = 'component CenteredPage';
 
   title = 'Ahhhmalizer';
 

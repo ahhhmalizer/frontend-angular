@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-page-choose-audience',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-choose-audience.component.scss']
 })
 export class PageChooseAudienceComponent implements OnInit {
+
+  @HostBinding('class') classes = 'CenteredPage';
 
   constructor() { }
 
