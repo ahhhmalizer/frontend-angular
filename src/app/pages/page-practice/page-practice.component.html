@@ -11,8 +11,7 @@
                     <span>Click to select a file, or drag it here</span>
                 </div>
             </div>
-            <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
-
+            <mat-progress-bar *ngIf="progress > -1" mode="determinate" [value]="progress"></mat-progress-bar>
         </mat-card-content>
     </mat-card>
     <mat-card class="choose-card">

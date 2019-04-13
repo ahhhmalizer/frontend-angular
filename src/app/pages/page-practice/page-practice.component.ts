@@ -12,7 +12,7 @@ export class PagePracticeComponent implements OnInit {
   @HostBinding('class') classes = 'component';
 
   title = 'Ahhhmalizer';
-  progress = 0;
+  progress = -1;
 
   constructor(private blob: BlobService, private router: Router) {}
   upload(file: File) {
@@ -21,7 +21,7 @@ export class PagePracticeComponent implements OnInit {
       const config = {
         baseUrl,
         sasToken: environment.config.sas,
-        blockSize: 1024 * 64, // OPTIONAL, default value is 1024 * 32
+        blockSize: 1024 * 64,
         file,
         complete: () => {
           this.router.navigateByUrl('/evaluation');
