@@ -1,1 +1,11 @@
-<mat-progress-spinner mode="determinate" [value]="loading"></mat-progress-spinner>
+<mat-list>
+  <mat-list-item>
+    <mat-progress-spinner *ngIf="true" mode="determinate" [value]="loading"></mat-progress-spinner>
+    Uploading your video.
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-progress-spinner mode="determinate" [value]="loading"></mat-progress-spinner>
+    Analyzing your video.
+  </mat-list-item>
+</mat-list>

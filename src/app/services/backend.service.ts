@@ -15,7 +15,6 @@ export class BackendService {
 
 export interface Evaluation {
   time: string;
-
   words: number;
   wordCount: NameValue[];
   sentiments: NameValue[];
