@@ -13,6 +13,10 @@ import { PageLiveComponent } from './pages/page-live/page-live.component';
 import { PageEvaluationComponent } from './pages/page-evaluation/page-evaluation.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FileDropModule } from 'ngx-file-drop';
+import { PageLoadingComponent } from './pages/page-loading/page-loading.component';
+import { NgxsModule } from '@ngxs/store';
+import { AppState } from 'src/app/state/AppState';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { FileDropModule } from 'ngx-file-drop';
     PagePracticeComponent,
     PageChooseAudienceComponent,
     PageLiveComponent,
-    PageEvaluationComponent
+    PageEvaluationComponent,
+    PageLoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,16 @@ import { FileDropModule } from 'ngx-file-drop';
     BlobModule.forRoot(),
     BrowserAnimationsModule,
     FileDropModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgxsModule.forRoot([AppState], {
+      developmentMode: !environment.production
+    })
+    // NgxsLoggerPluginModule.forRoot({
+    //   disabled: environment.production
+    // }),
+    // NgxsReduxDevtoolsPluginModule.forRoot({
+    //   disabled: environment.production
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

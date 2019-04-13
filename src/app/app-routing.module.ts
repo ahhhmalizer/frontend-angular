@@ -5,11 +5,13 @@ import { PageChooseAudienceComponent } from 'src/app/pages/page-choose-audience/
 import { PagePracticeComponent } from 'src/app/pages/page-practice/page-practice.component';
 import { PageLiveComponent } from 'src/app/pages/page-live/page-live.component';
 import { PageEvaluationComponent } from 'src/app/pages/page-evaluation/page-evaluation.component';
+import { PageLoadingComponent } from 'src/app/pages/page-loading/page-loading.component';
 
 const routes: Routes = [
   { path: 'choose-audience', component: PageChooseAudienceComponent },
   { path: 'practice', component: PagePracticeComponent },
   { path: 'live', component: PageLiveComponent },
+  { path: 'loading', component: PageLoadingComponent },
   { path: 'evaluation', component: PageEvaluationComponent },
   { path: '**', component: PageLandingComponent }
 ];
