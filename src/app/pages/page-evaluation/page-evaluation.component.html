@@ -1,17 +1,29 @@
-<h1>
-  Score
+<h1 id="heading">
+  <div>
+    <span>Score </span>
+    <span class="mat-headline">45/100</span>
+  </div>
+  <div>
+    <span class="mat-subheading-2"><b>Words:</b> {{totalWords}} </span>
+    <span class="mat-subheading-2"><b>Duration:</b> {{totalTime}}</span>
+  </div>
 </h1>
-<video id="video" width="320" height="240" controls>
-  <source id="video" [src]="videoUrl" type="video/mp4">
-</video>
+<mat-divider></mat-divider>
+<div>
+
+  <video id="video" width="1000" height="400" controls>
+    <source id="video" [src]="videoUrl" type="video/mp4">
+  </video>
+
+
+</div>
 
 <h2>
   Sentiment Analysis
 </h2>
 <ngx-charts-bar-horizontal-normalized [view]="view" [scheme]="colorScheme" [results]="sentimentArray"
   [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" (select)="onSelect($event)"
-  [showGridLines]="false">
+  [showYAxisLabel]="showYAxisLabel" (select)="onSelect($event)" [showGridLines]="false">
 </ngx-charts-bar-horizontal-normalized>
 
 <h2>
@@ -19,8 +31,7 @@
 </h2>
 <ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="emotionArray" [gradient]="gradient"
   [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoScale"
-  (select)="onSelect($event)" [showGridLines]="false">
+  [showYAxisLabel]="showYAxisLabel" [autoScale]="autoScale" (select)="onSelect($event)" [showGridLines]="false">
 </ngx-charts-area-chart>
 
 <h2>
