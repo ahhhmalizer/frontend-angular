@@ -1,14 +1,18 @@
 <h1>
   Score
 </h1>
+<video id="video" width="320" height="240" controls>
+  <source id="video" [src]="videoUrl" type="video/mp4">
+</video>
+
 <h2>
   Sentiment Analysis
 </h2>
-<ngx-charts-area-chart [view]="view" [scheme]="colorScheme" [results]="sentimentArray" [gradient]="gradient"
-  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [autoScale]="autoScale"
-  (select)="onSelect($event)" [showGridLines]="false">
-</ngx-charts-area-chart>
+<ngx-charts-bar-horizontal-normalized [view]="view" [scheme]="colorScheme" [results]="sentimentArray"
+  [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" (select)="onSelect($event)"
+  [showGridLines]="false">
+</ngx-charts-bar-horizontal-normalized>
 
 <h2>
   Emotion

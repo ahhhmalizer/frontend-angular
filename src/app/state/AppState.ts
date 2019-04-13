@@ -3,7 +3,7 @@ import { BackendService, Evaluation } from 'src/app/services/backend.service';
 
 export class LoadEvaluation {
   static readonly type = '[App State] SetEvaluation';
-  constructor() {}
+  constructor(public videoUrl: string) {}
 }
 
 export class SetProgress {
@@ -21,7 +21,9 @@ export class SetProgress {
       wordCount: []
     },
     progress: -1,
-    uploaded: false
+    uploaded: false,
+    analyzed: false,
+    videoUrl: 'https://ahhhmalizerstorage.blob.core.windows.net/test/t_video5298516770129183463.mp4'
   }
 })
 export class AppState {
@@ -37,14 +39,16 @@ export class AppState {
     ctx.patchState({
       uploaded: true
     });
-    return this.backendService.getAnalayze().subscribe(
+    return this.backendService.getAnalayze(action.videoUrl).subscribe(
       data => {
         ctx.patchState({
-          evaluation: data
+          evaluation: data,
+          analyzed: true
         });
       },
       error => {
         ctx.patchState({
+          analyzed: true,
           evaluation: {
             time: '0:00:14.614',
             words: 20,
@@ -154,4 +158,6 @@ export interface AppStateModel {
   evaluation: Evaluation;
   progress: number;
   uploaded: boolean;
+  analyzed: boolean;
+  videoUrl: string;
 }

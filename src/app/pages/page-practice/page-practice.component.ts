@@ -23,7 +23,7 @@ export class PagePracticeComponent implements OnInit {
         blockSize: 1024 * 64,
         file,
         complete: () => {
-          this.store.dispatch(new LoadEvaluation());
+          this.store.dispatch(new LoadEvaluation(baseUrl));
         },
         error: err => {
           console.log('Error:', err);

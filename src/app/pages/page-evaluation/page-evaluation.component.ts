@@ -1,5 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { wordMap, multi } from './test-data';
+import { Store } from '@ngxs/store';
+import { AppState, AppStateModel } from 'src/app/state/AppState';
 
 @Component({
   selector: 'app-page-evaluation',
@@ -7,12 +9,22 @@ import { wordMap, multi } from './test-data';
   styleUrls: ['./page-evaluation.component.scss']
 })
 export class PageEvaluationComponent implements OnInit {
+  constructor(private store: Store) {
+    this.store.select(AppState).subscribe((data: AppStateModel) => {
+      this.sentimentArray = [
+        {
+          name: 'Sentiment',
+          series: data.evaluation.sentiments
+        }
+      ];
+      this.videoUrl = data.videoUrl;
+    });
+  }
 
   @HostBinding('class')
   class = 'CenteredPage';
 
-  constructor() {}
-
+  videoUrl = '';
   sentimentArray: any[] = multi;
   emotionArray: any[] = multi;
   wordMapArray: any[] = wordMap;

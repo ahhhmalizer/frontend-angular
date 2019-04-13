@@ -8,8 +8,10 @@ import { Observable } from 'rxjs';
 export class BackendService {
   constructor(private httpClient: HttpClient) {}
 
-  getAnalayze(): Observable<Evaluation> {
-    return this.httpClient.get<Evaluation>('https://ahmalyzer.azurewebsites.net/api/HttpTriggerCSharp');
+  getAnalayze(videoUrl: string): Observable<Evaluation> {
+    return this.httpClient.get<Evaluation>(
+      `https://ahmalyzer.azurewebsites.net/api/HttpTriggerCSharp?name=${videoUrl}`
+    );
   }
 }
 
